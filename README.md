@@ -1,6 +1,6 @@
 # Project 7 - WordPress Pentesting
 
-Time spent: 4 hours spent in total
+Time spent: **4** hours spent in total
 
 > Objective: Find, analyze, recreate, and document **five vulnerabilities** affecting an old version of WordPress
 
@@ -12,7 +12,7 @@ Time spent: 4 hours spent in total
   - Vulnerability types: XSS
   - Tested in version: 4.2.2
   - Fixed in version: 4.2.3
-- [ ] GIF Walkthrough:
+- [ ] GIF Walkthrough: ![](https://github.com/c-ryan-jung/codepath7/blob/master/gif1.gif)
 - [ ] Steps to recreate: The code executes when the mouse is hovered over the link. In order to do this, an attack must have access to an account with posting privileges. The first step is to create a new post. Make sure that the body of the post is in text mode not visual mode. From here all one has to do is create an html code for a link, and inside that, have the javascript command of choice. For this example, I used <!--<a h r e f="[caption code=">]</a><a title=" onmouseover=alert('test')  ">link</a>\*/-->
       Afterwards, all one needs to do is create the post. When examining the post in question, for this example I chose a javascript line of code that executes an alert when a user hovers their mouse over the link.
 
@@ -25,7 +25,7 @@ Time spent: 4 hours spent in total
   - Vulnerability types: XSS
   - Tested in version: 4.2.3
   - Fixed in version: 4.2.4
-- [ ] GIF Walkthrough:
+- [ ] GIF Walkthrough: ![](https://github.com/c-ryan-jung/codepath7/blob/master/gif2.gif)
 - [ ] Steps to recreate:In order to do this, one must access the page as admin. Next post a comment containing a javascript command that executes when the mouse is hovered over a certain area, I used <!--<a href='/wp-admin/' title="" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;" onmouseover=alert(1)//' rel="nofollow">Test</a> Mouse over the area in question and the alert will pop up.-->
 - [ ] Affected source code:
   - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
@@ -36,8 +36,8 @@ Time spent: 4 hours spent in total
   - Vulnerability types: XSS
   - Tested in version: 4.2
   - Fixed in version: 4.2.15
-- [ ] GIF Walkthrough:
-- [ ] Steps to recreate:
+- [ ] GIF Walkthrough: ![](https://github.com/c-ryan-jung/codepath7/blob/master/gif1.gif)
+- [ ] Steps to recreate: To do this, one must first have some image/media file that is more than 20 mb. The they must name it such as (arbitrary name) <!--<img src=x onerror=alert('gotcha')>.(whatever file type).--> Next as an administrator, try to upload the image on the /media-new.php page. Normally it will just tell you that an error occurred, but because of the javascript, it will prompt an alert.
 - [ ] Affected source code:
   - [Link 1](https://core.trac.wordpress.org/browser/tags/4.9/src/wp-includes/class-wp-xmlrpc-server.php#L5877)
 
